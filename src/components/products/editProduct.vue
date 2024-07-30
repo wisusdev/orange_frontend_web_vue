@@ -21,7 +21,7 @@
 
     const getProviders = async () => {
         try {
-            const response = await axios.get('http://127.0.0.1:8000/api/v1/providers');
+            const response = await axios.get('https://orange-api.wisus.dev/api/v1/providers');
             providersData.value = response.data.data;
         } catch (error) {
             console.error(error);
@@ -30,7 +30,7 @@
 
     const getProduct = async () => {
         try {
-            const response = await axios.get(`http://127.0.0.1:8000/api/v1/products/${productId}`);
+            const response = await axios.get(`https://orange-api.wisus.dev/api/v1/products/${productId}`);
             product.value = response.data.data;
         } catch (error) {
             console.error(error);
@@ -39,7 +39,7 @@
 
     const updateProduct = async () => {
         try {
-            const response = await axios.put(`http://127.0.0.1:8000/api/v1/products/${productId}`, product.value);
+            const response = await axios.put(`https://orange-api.wisus.dev/api/v1/products/${productId}`, product.value);
             if (response.status === 200) {
                 alert('Product updated successfully');
                 await router.push({name: 'products.index'});

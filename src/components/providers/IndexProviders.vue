@@ -17,7 +17,7 @@
 
     const getProviders = async (pageSize: number, pageNumber: number, filterValue: string) => {
         try {
-            const response = await axios.get(`http://127.0.0.1:8000/api/v1/providers?page[size]=${pageSize}&page[number]=${pageNumber}&filter[${filterType}]=${filterValue}&sort=${order}${sort}`);
+            const response = await axios.get(`https://orange-api.wisus.dev/api/v1/providers?page[size]=${pageSize}&page[number]=${pageNumber}&filter[${filterType}]=${filterValue}&sort=${order}${sort}`);
 
             providers.value = response.data;
             providersData.value = response.data.data;
@@ -32,7 +32,7 @@
 
     const deleteProvider = async (id: number) => {
         try {
-            await axios.delete(`http://127.0.0.1:8000/api/v1/providers/${id}`);
+            await axios.delete(`https://orange-api.wisus.dev/api/v1/providers/${id}`);
             await getProviders(pageSize, pageNumber, filterValue);
         } catch (error) {
             console.error(error);

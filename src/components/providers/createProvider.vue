@@ -15,7 +15,7 @@
 
     const createProvider = async () => {
         try {
-            const response = await axios.post(`http://127.0.0.1:8000/api/v1/providers`, provider.value);
+            const response = await axios.post(`https://orange-api.wisus.dev/api/v1/providers`, provider.value);
             if (response.status === 201) {
                 alert('Provider created successfully');
                 await router.push({name: 'providers.index'});

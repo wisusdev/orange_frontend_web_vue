@@ -18,7 +18,7 @@
 
     const getProvider = async () => {
         try {
-            const response = await axios.get(`http://127.0.0.1:8000/api/v1/providers/${providerId}`);
+            const response = await axios.get(`https://orange-api.wisus.dev/api/v1/providers/${providerId}`);
             provider.value = response.data.data;
         } catch (error) {
             console.error(error);
@@ -27,7 +27,7 @@
 
     const updateProvider = async () => {
         try {
-            const response = await axios.put(`http://127.0.0.1:8000/api/v1/providers/${providerId}`, provider.value);
+            const response = await axios.put(`https://orange-api.wisus.dev/api/v1/providers/${providerId}`, provider.value);
             if (response.status === 200) {
                 alert('Provider updated successfully');
                 await router.push({name: 'providers.index'});
